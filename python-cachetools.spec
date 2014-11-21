@@ -10,13 +10,13 @@ Summary:	Various cache implementations based on different cache algorithms
 Summary(pl.UTF-8):	Rózne implementacje cache bazujące na róznych algorytmach
 # Name must match the python module/package name (as in 'import' statement)
 Name:		python-%{module}
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 
 Source0:	https://pypi.python.org/packages/source/c/%{module}/%{module}-%{version}.tar.gz
-# Source0-md5:	45522c095523ab09af859c9fd54643c2
+# Source0-md5:	c67ebb099e7607b689f79b2869585d36
 URL:		https://github.com/tkem/cachetools
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
@@ -110,7 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc Changes LICENSE README.rst
+%doc LICENSE README.rst
 %{py_sitescriptdir}/%{module}
 %if "%{py_ver}" > "2.4"
 %{py_sitescriptdir}/%{module}-%{version}-py*.egg-info
@@ -120,7 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc Changes LICENSE README.rst
+%doc LICENSE README.rst
 %{py3_sitescriptdir}/%{module}
 %{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
 %endif
