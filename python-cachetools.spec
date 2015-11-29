@@ -20,7 +20,7 @@ Source0:	https://pypi.python.org/packages/source/c/%{module}/%{module}-%{version
 URL:		https://github.com/tkem/cachetools
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-distribute
 %endif
