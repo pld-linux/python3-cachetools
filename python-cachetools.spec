@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Rózne implementacje cache bazujące na róznych algorytmach
 # Name must match the python module/package name (as in 'import' statement)
 Name:		python-%{module}
 Version:	0.7.0
-Release:	13
+Release:	14
 License:	MIT
 Group:		Libraries/Python
 
