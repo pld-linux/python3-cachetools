@@ -3,15 +3,15 @@
 %bcond_with	doc		# don't build doc (not provided by package)
 %bcond_without	tests	# do not perform "make test"
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module
 
-%define 	module	cachetools
+%define		module	cachetools
 Summary:	Various cache implementations based on different cache algorithms
 Summary(pl.UTF-8):	Rózne implementacje cache bazujące na róznych algorytmach
 # Name must match the python module/package name (as in 'import' statement)
 Name:		python-%{module}
 Version:	0.7.0
-Release:	14
+Release:	15
 License:	MIT
 Group:		Libraries/Python
 
