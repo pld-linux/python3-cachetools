@@ -6,7 +6,7 @@
 %define		module	cachetools
 Summary:	Various cache implementations based on different cache algorithms
 Summary(pl.UTF-8):	Rózne implementacje cache bazujące na róznych algorytmach
-Name:		python-%{module}
+Name:		python3-%{module}
 Version:	5.5.2
 Release:	1
 License:	MIT
