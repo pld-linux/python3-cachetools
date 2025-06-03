@@ -8,7 +8,7 @@ Summary:	Extensible memoizing collections and decorators
 Summary(pl.UTF-8):	Rozszerzalne kolekcje i dekoratory z pamięcią
 Name:		python3-%{module}
 Version:	5.5.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/cachetools/
@@ -26,6 +26,8 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	sphinx-pdg-3
 %endif
 Requires:	python3-modules >= 1:3.7
+# python3 module packaged under wrong name
+Obsoletes:	python-cachetools < 5.5.2-2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
