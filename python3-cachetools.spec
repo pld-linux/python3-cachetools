@@ -8,7 +8,7 @@ Summary:	Extensible memoizing collections and decorators
 Summary(pl.UTF-8):	Rozszerzalne kolekcje i dekoratory z pamięcią
 Name:		python3-%{module}
 Version:	5.5.2
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/cachetools/
