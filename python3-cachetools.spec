@@ -1,31 +1,34 @@
 #
 # Conditional build:
-%bcond_with	doc	# Sphinx documentation (fails to build)
+%bcond_with	doc	# Sphinx documentation (fails to build while creating page index)
 %bcond_without	tests	# unit tests
 
 %define		module	cachetools
 Summary:	Extensible memoizing collections and decorators
 Summary(pl.UTF-8):	Rozszerzalne kolekcje i dekoratory z pamięcią
 Name:		python3-%{module}
-Version:	5.5.2
-Release:	3
+Version:	7.0.1
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/cachetools/
 Source0:	https://files.pythonhosted.org/packages/source/c/cachetools/%{module}-%{version}.tar.gz
-# Source0-md5:	bc4019928cf73ca154ff5416280282bb
+# Source0-md5:	c0135bb753895920a043425e69ee5dd6
 URL:		https://github.com/tkem/cachetools
-BuildRequires:	python3-modules >= 1:3.7
-BuildRequires:	python3-setuptools
+BuildRequires:	python3-build
+BuildRequires:	python3-installer
+BuildRequires:	python3-modules >= 1:3.10
+BuildRequires:	python3-setuptools >= 1:61.0.0
+BuildRequires:	python3-wheel
 %if %{with tests}
 BuildRequires:	python3-pytest
 %endif
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
+BuildRequires:	rpmbuild(macros) >= 2.044
 %if %{with doc}
 BuildRequires:	sphinx-pdg-3
 %endif
-Requires:	python3-modules >= 1:3.7
+Requires:	python3-modules >= 1:3.10
 # python3 module packaged under wrong name
 Obsoletes:	python-cachetools < 5.5.2-2
 BuildArch:	noarch
@@ -56,7 +59,7 @@ Dokumentacja API modułu %{module}.
 %setup -q -n %{module}-%{version}
 
 %build
-%py3_build
+%py3_build_pyproject
 
 %if %{with tests}
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
@@ -73,7 +76,7 @@ sphinx-build-3 -b html docs docs/_build/html \
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%py3_install
+%py3_install_pyproject
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,11 +84,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG.rst LICENSE README.rst
-%{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%{py3_sitescriptdir}/cachetools
+%{py3_sitescriptdir}/cachetools-%{version}.dist-info
 
 %if %{with doc}
 %files apidocs
 %defattr(644,root,root,755)
-%doc docs/_build/html/*
+%doc docs/_build/html/{_static,*.html,*.js}
 %endif
