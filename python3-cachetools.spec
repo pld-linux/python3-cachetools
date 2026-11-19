@@ -7,13 +7,13 @@
 Summary:	Extensible memoizing collections and decorators
 Summary(pl.UTF-8):	Rozszerzalne kolekcje i dekoratory z pamięcią
 Name:		python3-%{module}
-Version:	7.0.1
+Version:	8.0.2
 Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/cachetools/
 Source0:	https://files.pythonhosted.org/packages/source/c/cachetools/%{module}-%{version}.tar.gz
-# Source0-md5:	c0135bb753895920a043425e69ee5dd6
+# Source0-md5:	9fb176c6a69aa249209bd1d00989d6b9
 URL:		https://github.com/tkem/cachetools
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
